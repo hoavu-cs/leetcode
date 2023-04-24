@@ -35,5 +35,4 @@ class Solution:
                                 for k in range(i+1):
                                     if M[k-1][j-2]:
                                         M[i][j] = True
-
         return M[n][m]
