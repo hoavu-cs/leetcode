@@ -1,0 +1,20 @@
+from math import inf
+
+class Solution:
+    def maxProduct(self, nums: List[int]) -> int:
+        n = len(nums)
+        current_positive = max(0, nums[0])
+        current_negative = min(0, nums[0])
+        max_product = nums[0]
+
+        for i in range(1, n ):
+            if nums[i] >= 0:
+                current_positive = max(0, nums[i], nums[i]*current_positive)
+                current_negative = min(0, nums[i]*current_negative)
+            else: 
+                current_positive_copy = current_positive
+                current_positive = max(0, nums[i]*current_negative)
+                current_negative = min(0, nums[i], nums[i]*current_positive_copy)
+            max_product = max(max_product, current_positive)
+        
+        return max_product
