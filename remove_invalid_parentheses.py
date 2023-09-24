@@ -1,8 +1,8 @@
 from math import inf
+
 class Solution:
     
     def removeInvalidParentheses(self, s: str) -> List[str]:
-
         def is_valid(s):
             count = 0
             for idx in range(len(s)):
