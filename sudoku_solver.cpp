@@ -48,4 +48,9 @@ public:
         return true;
     }
     
+public:
+    void solveSudoku(vector<vector<char>>& board) {
+        solve(board);
+    }
+
 };
